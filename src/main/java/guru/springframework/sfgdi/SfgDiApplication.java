@@ -11,7 +11,7 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 
-		System.out.println("------ Profile");
+		System.out.println("------ Profile"); // Currently using en profile - see application.properties
 		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
 		System.out.println(i18nController.sayHello());
 
