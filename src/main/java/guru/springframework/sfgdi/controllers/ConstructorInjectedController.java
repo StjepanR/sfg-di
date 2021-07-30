@@ -10,7 +10,7 @@ public class ConstructorInjectedController {
 
     private final GreetingService greetingService;
 
-    public ConstructorInjectedController(@Qualifier("constructorInjectedGreetingService") GreetingService greetingService) {
+    public ConstructorInjectedController(@Qualifier("constructorInjectedGreetingService") GreetingService greetingService) { // if @Qualifier annotation is removed @Primary is used
         this.greetingService = greetingService;
     }
 

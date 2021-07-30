@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class PropertyInjectedController {
 
-    @Qualifier("propertyInjectedGreetingService")
+    @Qualifier("propertyInjectedGreetingService") // if @Qualifier annotation is removed @Primary is used
     @Autowired
     public GreetingService greetingService;
 
