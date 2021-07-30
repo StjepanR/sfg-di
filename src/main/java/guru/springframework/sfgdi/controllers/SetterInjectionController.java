@@ -10,7 +10,7 @@ public class SetterInjectionController {
 
     private GreetingService greetingService;
 
-    @Qualifier("setterInjectedGreetingService")
+    @Qualifier("setterInjectedGreetingService") // if @Qualifier annotation is removed @Primary is used
     @Autowired
     public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
