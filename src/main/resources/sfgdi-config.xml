@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="constructorInjectedGreetingService" class="guru.springframework.sfgdi.services.ConstructorInjectedGreetingService"/>
+    <bean name="propertyInjectedGreetingService" class="guru.springframework.sfgdi.services.PropertyInjectedGreetingService"/>
+    <bean name="setterInjectedGreetingService" class="guru.springframework.sfgdi.services.SetterInjectedGreetingService"/>
+    <bean name="primaryGreetingService" class="guru.springframework.sfgdi.services.PrimaryGreetingService" primary="true"/>
+    <bean name="englishGreetingRepository" class="guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl"/>
+    <bean name="petServiceFactory" class="com.springframework.pets.PetServiceFactory"/>
+
+    <beans profile="ES">
+        <bean name="i18nService" class="guru.springframework.sfgdi.services.I18nSpanishGreetingService"/>
+    </beans>
+    <beans profile="default">
+        <bean name="i18nService" class="guru.springframework.sfgdi.services.I18nSpanishGreetingService"/>
+    </beans>
+
+</beans>
