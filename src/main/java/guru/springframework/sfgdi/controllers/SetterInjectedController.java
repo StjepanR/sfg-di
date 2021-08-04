@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class SetterInjectionController {
+public class SetterInjectedController {
 
     private GreetingService greetingService;
 

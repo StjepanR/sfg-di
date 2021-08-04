@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 
 class SetterInjectionControllerTest {
 
-    SetterInjectionController controller;
+    SetterInjectedController controller;
 
     @BeforeEach
     void setUp() {
-        controller = new SetterInjectionController();
+        controller = new SetterInjectedController();
         controller.setGreetingService(new SetterInjectedGreetingService());
     }
 
