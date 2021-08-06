@@ -1,7 +1,0 @@
-apring:
-  profiles:
-    active: cat, ES
-guru:
-  username: superuser
-  password: dbPassword
-  jdbcurl: someUrlForDB
