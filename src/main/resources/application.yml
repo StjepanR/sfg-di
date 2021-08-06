@@ -1,7 +1,18 @@
 spring:
   profiles:
-    active: cat, ES, qa
+    active:
+      - cat
+      - ES
+      - prod
 guru:
-  username: superuser
-  password: dbPassword
-  jdbcurl: someUrlForDB
+  username: YmlSuperuser
+  password: YmlDBPassword
+  jdbcurl: YmlSomeUrlForDB
+
+---
+spring:
+  profiles: prod
+guru:
+  username: YmlProdSuperuser
+  password: YmlProdDBPassword
+  jdbcurl: YmlProdSomeUrlForDB

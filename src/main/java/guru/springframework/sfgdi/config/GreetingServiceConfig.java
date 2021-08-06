@@ -13,6 +13,19 @@ import org.springframework.context.annotation.*;
 @Configuration
 public class GreetingServiceConfig {
 
+    /*
+    * Due to having SfgConfiguration class we bounded guru properties to the class
+    * Now we can pass class instance which contains needed properties
+    * */
+    @Bean
+    FakeDataSource fakeDataSource(SfgConfiguration sfgConfiguration) {
+        FakeDataSource fakeDataSource = new FakeDataSource();
+        fakeDataSource.setUsername(sfgConfiguration.getUsername());
+        fakeDataSource.setPassword(sfgConfiguration.getPassword());
+        fakeDataSource.setJdbcurl(sfgConfiguration.getJdbcurl());
+        return fakeDataSource;
+    }
+/*
     @Bean
     FakeDataSource fakeDataSource(@Value("${guru.username}") String username, @Value("${guru.password}") String password, @Value("${guru.jdbcurl}") String jdbcurl) {
         FakeDataSource fakeDataSource = new FakeDataSource();
@@ -21,7 +34,7 @@ public class GreetingServiceConfig {
         fakeDataSource.setJdbcurl(jdbcurl);
         return fakeDataSource;
     }
-
+*/
     @Bean
     PetServiceFactory petServiceFactory() {
         return new PetServiceFactory();
